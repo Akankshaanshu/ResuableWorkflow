@@ -5,7 +5,10 @@ on:
 jobs:
   do-it:
    runs-on: unbuntu-latest
-   
+   steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: echo hello wolrd 
      
   docker:
       uses: Akankshaanshu/node-hello/.github/workflows/action.yml@master
