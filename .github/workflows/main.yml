@@ -4,18 +4,15 @@ on:
   workflow_dispatch:
 jobs:
   do-it:
-    runs-on: unbuntu-latest
-    steps:
-      -uses:actions/checkout@v2
-      -name: run a one line script
-       run: echo hello akanksha 
+   runs-on: unbuntu-latest
+   
      
-   docker:
-    uses:/Akankshaanshu/node-hello/.github/workflows/action.yml@master
-    with:
-      image_name: myimage
-    secrets:
-      DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
-      DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+  docker:
+      uses: Akankshaanshu/node-hello/.github/workflows/action.yml@master
+      with:
+       image_name: myimage
+      secrets:
+       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     
  
